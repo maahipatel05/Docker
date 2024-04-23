@@ -7,42 +7,49 @@
 </head>
 <body>
 <p>
-<b>Title: Creating a 3-Tier Application Using Docker</b>
+<h1><b>Title: Creating a 3-Tier Application Using Docker</b></h1>
 <br>
 In this tutorial, we will walk you through the process of creating a 3-tier application using Docker. A 3-tier application architecture consists of a presentation tier, an application tier, and a data tier. We will use Docker to containerize each tier and orchestrate them to work together seamlessly.
 <br>
-<b>Step 1: Push Images to Docker Hub</b>
+<br>
+<h3><b>Step 1: Push Images to Docker Hub</b></h3>
 Before we begin, make sure you have Docker installed on your machine. You can download Docker from the official website and follow the installation instructions for your operating system.
 <br>
 Firstly, pull the MongoDB and MongoDB Express images from Docker Hub. These images will be used for the data tier of our application.
 <br>
-<b>Step 2: Create Docker Network</b>
+<br>
+<h3><b>Step 2: Create Docker Network</b></h3>
 Next, create a Docker network named mongo-network. This network will allow the containers in our application to communicate with each other.
 <br>
-<b>Step 3: Create MongoDB and MongoDB Express Containers</b>
+<br>
+<h3><b>Step 3: Create MongoDB and MongoDB Express Containers</b></h3>
 Now, create containers for MongoDB and MongoDB Express, and connect them to the mongo-network. MongoDB will run on port 27017 and MongoDB Express on port 8081.
 <br>
-<img src=".//Users/maahi/Desktop/Docker 2/public/images/WhatsApp Image 2024-04-23 at 10.38.37 AM.jpeg" alt="Image not found">
+<img src="./public/images/WhatsApp Image 2024-04-23 at 10.38.37 AM.jpeg" alt="Image not found">
 <br>
-<b>Step 4: Create Node.js Application</b>
+<br>
+<h3><b>Step 4: Create Node.js Application</b></h3>
 Create a basic Node.js application with a server.js file that will serve as the application tier. This file will connect to the MongoDB database.
 <br>
 <img src="./public/images/Screenshot 2024-04-23 at 9.35.04 AM.png" alt="image not found">
 <br>
-<img src=".//Users/maahi/Desktop/Docker 2/public/images/Screenshot 2024-04-23 at 9.36.01 AM.png" alt="image not found">
+<img src="./public/images/Screenshot 2024-04-23 at 9.36.01 AM.png" alt="image not found">
 <br>
-<b>Step 5: Dockerize the Node.js Application</b>
+<br>
+<h3><b>Step 5: Dockerize the Node.js Application</b></h3>
 Create a Dockerfile for the Node.js application to containerize it. This Dockerfile will use the node image as the base image, copy the application files, install dependencies, expose port 4000, and start the server.
 <br>
 Build the Docker image using the following command:
 docker build -t 21bcp216img .
 <br>
-<img src=".//Users/maahi/Desktop/Docker 2/public/images/WhatsApp Image 2024-04-23 at 10.37.15 AM.jpeg" alt="image not found">
+<img src="./public/images/WhatsApp Image 2024-04-23 at 10.37.15 AM.jpeg" alt="image not found">
 <br>
-<b>Step 6: Run the Node.js Application Container</b>
+<br>
+<h3><b>Step 6: Run the Node.js Application Container</b></h3>
 Finally, run the Node.js application container and connect it to the app-network. The application will be accessible at http://localhost:4000.
 <br>
-<b>Conclusion:</b>
+<br>
+<h3><b>Conclusion:</b></h3>
 Congratulations! You have successfully created a 3-tier application using Docker. The presentation tier is represented by the Node.js application, the application tier by the MongoDB database, and the data tier by MongoDB Express. Docker allows you to easily containerize and orchestrate your application, making deployment and management much simpler.
 </p>
     
